@@ -122,7 +122,7 @@ const SpellForm = ({ onSpellAdded }) => {
 
   return (
     <form onSubmit={handleSubmit} className="spell-form">
-      <h2>додати нове заклинання</h2>
+      <h2>Додати нове заклинання</h2>
 
       <label>Назва:</label>
       <input type="text" name="name" value={spell.name} onChange={handleInputChange} required />
@@ -138,7 +138,7 @@ const SpellForm = ({ onSpellAdded }) => {
         required 
       />
 
-      <label>Дії ({spellConfig.actions.min}-{spellConfig.actions.max}):</label>
+      <label>💠 Кількість дій ({spellConfig.actions.min}-{spellConfig.actions.max}):</label>
       <input 
         type="number" 
         name="actions" 
@@ -149,7 +149,7 @@ const SpellForm = ({ onSpellAdded }) => {
         required 
       />
       
-      <label>Тривалість: ({spellConfig.range.units}):</label>
+      <label>🚶 Відстань: ({spellConfig.range.units}):</label>
       <input 
         type="number" 
         name="range" 
@@ -200,7 +200,7 @@ const SpellForm = ({ onSpellAdded }) => {
               ...prev,
               duration: { ...prev.duration, customUnit: e.target.value }
             }))}
-            placeholder="Specify custom duration unit"
+            placeholder="Вкажи власну одиницю"
             className="custom-duration-input"
             required
           />
@@ -208,7 +208,7 @@ const SpellForm = ({ onSpellAdded }) => {
       </div>
 
       <div className="checkbox-group">
-        <label>Арканічні мистецтва:</label>
+        <label>Арканічні традиції:</label>
         <div className="checkbox-options">
           {spellConfig.traditions.map(tradition => (
             <label key={tradition}>

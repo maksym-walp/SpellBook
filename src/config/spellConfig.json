@@ -52,7 +52,7 @@
     {
       "value": "custom",
       "label": "Власне значення",
-      "requiresValue": true,
+      "requiresValue": false,
       "requiresCustomUnit": true
     }
   ],
@@ -68,12 +68,7 @@
     "min": 0,
     "units": "Метри"
   },
-  "defaultComponents": [""],
-  "componentTypes": [
-    "Verbal",
-    "Somatic",
-    "Material"
-  ],
+  "defaultComponents": [],
   "flags": [
     {
       "name": "concentration",

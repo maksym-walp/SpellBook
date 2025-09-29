@@ -50,9 +50,11 @@
   background-color: var(--ink-color);
   padding: 15px;
   color: var(--gold-color);
-  text-align: center;
   box-shadow: 0 4px 12px var(--shadow-color);
   border-bottom: 2px solid var(--gold-color);
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space out title and nav */
+  align-items: center; /* Vertically align items */
 }
 
 .App-header h1 {
@@ -62,6 +64,18 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   margin: 0;
   font-size: 1.5rem;
+}
+
+.App-header nav a {
+  color: var(--gold-color);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.App-header nav a:hover {
+  color: #fff;
 }
 
 main {

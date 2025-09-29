@@ -60,11 +60,11 @@ const SpellDetail = () => {
       <h1>{spell.name}</h1>
       <div className="spell-meta">
         <span><strong>Рівень:</strong> {spell.level}</span>
-        <span><strong>Арканічні мистецтва:</strong> {spell.traditions.join(', ')}</span>
+        <span><strong>Арканічні традиції:</strong> {spell.traditions.join(', ')}</span>
       </div>
       <div className="spell-properties">
-        <p><strong>Кількість дій:</strong> {spell.actions}</p>
-        <p><strong>Відстань:</strong> {spell.range} {spellConfig.range.units}</p>
+        <p><strong>💠 Кількість дій:</strong> {spell.actions}</p>
+        <p><strong>🚶 Відстань:</strong> {spell.range} {spellConfig.range.units}</p>
         <p><strong>⌛ Тривалість:</strong> {getDurationText(spell.duration)}</p>
         <p><strong>Компоненти:</strong> {spell.components.join(', ')}</p>
         <div className="spell-flags">

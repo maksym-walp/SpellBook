@@ -103,7 +103,7 @@ const SpellList = ({ spells }) => {
           </div>
 
           <div className="filter-group traditions">
-            <label>Арканічні мистецтва:</label>
+            <label>Арканічні традиції:</label>
             <div className="traditions-list">
               {spellConfig.traditions.map(tradition => (
                 <label key={tradition} className="tradition-checkbox">

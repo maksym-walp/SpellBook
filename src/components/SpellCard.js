@@ -32,11 +32,11 @@ const SpellCard = ({ spell }) => {
           </div>
         </div>
         <div className="spell-card-details">
-          <p><strong>Дії:</strong> {spell.actions}</p>
-          <p><strong>Відстань:</strong> {spell.range} {spellConfig.range.units}</p>
+          <p><strong>💠 Дії:</strong> {spell.actions}</p>
+          <p><strong>🚶 Відстань:</strong> {spell.range} {spellConfig.range.units}</p>
           <p><strong>⌛ Тривалість:</strong> {getDurationText(spell.duration)}</p>
         </div>
-        <p className="traditions"><strong>Мистецтва:</strong> {spell.traditions.join(', ')}</p>
+        <p className="traditions"><strong>Традиції:</strong> {spell.traditions.join(', ')}</p>
         <p className="spell-description">{spell.narrativeDescription}</p>
         {spell.hasHigherLevels && (
           <div className="higher-levels-indicator">

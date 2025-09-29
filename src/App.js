@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import SpellList from './components/SpellList';
 import SpellDetail from './components/SpellDetail';
 import SpellForm from './components/SpellForm';
+import Traditions from './components/Traditions';
 import './App.css';
 
 function App() {
@@ -46,9 +47,11 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
-            <h1>Spell Book</h1>
-          </Link>
+          <h1>Spell Book</h1>
+          <nav>
+            <Link to="/">Заклинання</Link>
+            <Link to="/traditions">Про арканічні традиції</Link>
+          </nav>
         </header>
         <Routes>
           <Route path="/" element={
@@ -62,6 +65,7 @@ function App() {
           } />
           <Route path="/spells/:id" element={<SpellDetail />} />
           <Route path="/add-spell" element={<SpellForm onSpellAdded={handleSpellAdded} />} />
+          <Route path="/traditions" element={<Traditions />} />
         </Routes>
       </div>
     </Router>
