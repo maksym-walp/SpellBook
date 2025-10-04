@@ -14,6 +14,8 @@ function App() {
   const [spells, setSpells] = useState([]);
   // Стан для зберігання відфільтрованого списку заклинань для відображення
   const [filteredSpells, setFilteredSpells] = useState([]);
+  // Стан для відстеження стану меню (відкрито/закрито)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Ефект для завантаження заклинань з сервера при першому рендері
   useEffect(() => {
@@ -54,17 +56,34 @@ function App() {
     setFilteredSpells(updatedSpells); // Оновлюємо відображуваний список
   };
 
+  // Функція для перемикання стану меню
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <Router>
       <div className="App">
         {/* Хедер з назвою та навігацією */}
         <header className="App-header">
           <h1>Spell Book</h1>
-          <nav>
+          <button className="burger-menu" onClick={toggleMenu}>
+            <div />
+            <div />
+            <div />
+          </button>
+          {/* Навігація для десктопів залишається тут */}
+          <nav className="desktop-nav">
             <Link to="/">Заклинання</Link>
             <Link to="/traditions">Про арканічні традиції</Link>
           </nav>
         </header>
+
+        {/* Мобільне меню винесено окремо */}
+        <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+          <Link to="/" onClick={toggleMenu}>Заклинання</Link>
+          <Link to="/traditions" onClick={toggleMenu}>Про арканічні традиції</Link>
+        </nav>
 
         {/* Налаштування маршрутизації (роутінгу) */}
         <Routes>

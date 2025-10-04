@@ -10,7 +10,8 @@
   border-radius: 12px; /* Закруглені кути */
   box-shadow: 0 8px 24px var(--shadow-color); /* Виразна тінь */
   position: relative; /* Для позиціонування псевдоелемента */
-  overflow: hidden; /* Ховає все, що виходить за межі */
+  overflow-x: hidden; /* Забороняємо горизонтальний вихід за межі */
+  word-wrap: break-word; /* Перенесення довгих слів */
 }
 
 /*
@@ -36,6 +37,7 @@
   padding-bottom: 15px; /* Відступ до нижньої межі */
   border-bottom: 2px solid var(--gold-color); /* Декоративна лінія */
   text-shadow: 2px 2px 4px var(--shadow-color); /* Тінь для тексту */
+  word-break: break-word; /* Переносимо довгі слова */
 }
 
 /*
@@ -96,29 +98,13 @@
  */
 .level-tabs {
   display: flex;
+  flex-wrap: wrap; /* Дозволяє переносити елементи */
   gap: 10px;
   margin: 20px 0;
   padding: 10px;
-  background: rgba(44, 24, 16, 0.05); /* Дуже легкий темний фон */
+  background: rgba(44, 24, 16, 0.05);
   border-radius: 8px;
-  overflow-x: auto; /* Горизонтальна прокрутка на мобільних */
-  -webkit-overflow-scrolling: touch; /* Плавна прокрутка на iOS */
-  scrollbar-width: thin; /* Тонка смуга прокрутки */
-  white-space: nowrap; /* Заборона переносу вкладок */
-}
-
-/*
- * Стилізація смуги прокрутки для вкладок.
- */
-.level-tabs::-webkit-scrollbar {
-  height: 4px;
-}
-.level-tabs::-webkit-scrollbar-track {
-  background: transparent;
-}
-.level-tabs::-webkit-scrollbar-thumb {
-  background-color: var(--gold-color);
-  border-radius: 4px;
+  justify-content: center; /* Центруємо вкладки */
 }
 
 /*
@@ -127,13 +113,17 @@
 .level-tab {
   padding: 8px 16px;
   border: 2px solid var(--gold-color);
-  border-radius: 6px;
+  border-radius: 50%; /* Робимо кнопки круглими */
   background: transparent;
   color: var(--ink-color);
   cursor: pointer;
   transition: all 0.2s ease;
-  min-width: 100px;
-  text-align: center;
+  width: 45px; /* Фіксована ширина */
+  height: 45px; /* Фіксована висота */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
 .level-tab:hover {
@@ -210,10 +200,7 @@
 }
 
 @media (max-width: 599px) {
-  /* На мобільних вкладки займають всю ширину */
-  .level-tabs {
-    margin: 15px -25px; /* Виходять за межі padding контейнера */
-    padding: 10px 25px;
-    border-radius: 0;
+  .spell-detail-container {
+    padding: 15px; /* Зменшуємо відступи на мобільних */
   }
 }

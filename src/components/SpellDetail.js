@@ -106,7 +106,7 @@ const SpellDetail = () => {
               className={`level-tab ${selectedLevel === level ? 'active' : ''}`}
               onClick={() => setSelectedLevel(level)}
             >
-              {level} рівень
+              {level}
             </button>
           ))}
         </div>
