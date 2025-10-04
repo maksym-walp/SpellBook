@@ -1,10 +1,16 @@
+/*
+ * Основний контейнер для сторінки з описом традицій.
+ */
 .traditions-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1200px; /* Максимальна ширина */
+  margin: 0 auto; /* Центрування */
   padding: 20px;
 }
 
+/*
+ * Головний заголовок сторінки.
+ */
 .traditions-container h1 {
   font-family: 'Cinzel', serif;
   color: var(--accent-color);
@@ -12,12 +18,18 @@
   margin-bottom: 30px;
 }
 
+/*
+ * Сітка для розміщення карток з традиціями.
+ */
 .traditions-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr; /* Одна колонка на мобільних */
+  gap: 20px; /* Відстань між картками */
 }
 
+/*
+ * Стиль для картки окремої традиції.
+ */
 .tradition-card {
   background: var(--parchment-color);
   border: 2px solid var(--gold-color);
@@ -26,27 +38,39 @@
   box-shadow: 0 4px 15px var(--shadow-color);
 }
 
+/*
+ * Заголовок всередині картки традиції.
+ */
 .tradition-card h2 {
   font-family: 'Cinzel', serif;
   color: var(--ink-color);
-  border-bottom: 1px solid var(--gold-color);
+  border-bottom: 1px solid var(--gold-color); /* Декоративна лінія */
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
 
+/*
+ * Стиль для тексту опису традиції.
+ */
 .tradition-card p {
-  line-height: 1.6;
+  line-height: 1.6; /* Міжрядковий інтервал для кращої читабельності */
 }
 
+/*
+ * Адаптивні стилі для планшетів.
+ */
 @media (min-width: 768px) {
   .traditions-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Дві колонки */
     gap: 25px;
   }
 }
 
+/*
+ * Адаптивні стилі для десктопів.
+ */
 @media (min-width: 1024px) {
   .traditions-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
   }
 }

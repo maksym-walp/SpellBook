@@ -1,7 +1,10 @@
+/*
+ * Основний контейнер для форми додавання/редагування заклинання.
+ */
 .spell-form {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 800px; /* Максимальна ширина форми */
+  margin: 0 auto; /* Центрування */
   padding: 20px;
   background: var(--parchment-color);
   border: 2px solid var(--gold-color);
@@ -9,6 +12,9 @@
   box-shadow: 0 6px 20px var(--shadow-color);
 }
 
+/*
+ * Заголовок форми.
+ */
 .spell-form h2 {
   font-family: 'Cinzel', serif;
   color: var(--accent-color);
@@ -18,13 +24,19 @@
   border-bottom: 1px solid var(--gold-color);
 }
 
+/*
+ * Стилі для підписів до полів вводу.
+ */
 .spell-form label {
-  display: block;
+  display: block; /* Робить підпис блоковим елементом */
   margin-bottom: 8px;
   font-weight: bold;
   color: var(--ink-color);
 }
 
+/*
+ * Загальні стилі для полів вводу, текстових областей та селектів.
+ */
 .spell-form input[type="text"],
 .spell-form input[type="number"],
 .spell-form textarea,
@@ -33,24 +45,30 @@
   padding: 10px;
   border: 1px solid var(--gold-color);
   border-radius: 4px;
-  background-color: #fffef7;
+  background-color: rgba(255, 255, 255, 0.5); /* Напівпрозорий білий фон */
   color: var(--ink-color);
-  box-sizing: border-box; /* Added for consistent sizing */
+  box-sizing: border-box; /* Гарантує, що padding не збільшує ширину */
 }
 
+/*
+ * Стилі для полів при фокусі.
+ */
 .spell-form input:focus,
 .spell-form textarea:focus,
 .spell-form select:focus {
-  outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 5px var(--gold-color);
+  outline: none; /* Забирає стандартний контур фокусу */
+  border-color: var(--accent-color); /* Змінює колір рамки на акцентний */
+  box-shadow: 0 0 5px var(--gold-color); /* Додає легку тінь */
 }
 
 .spell-form textarea {
-  min-height: 100px;
-  resize: vertical;
+  min-height: 100px; /* Мінімальна висота */
+  resize: vertical; /* Дозволяє змінювати висоту по вертикалі */
 }
 
+/*
+ * Контейнери для груп чекбоксів та секції вищих рівнів.
+ */
 .checkbox-group,
 .higher-levels-section {
   margin: 25px 0;
@@ -59,22 +77,31 @@
   border: 1px solid var(--gold-color);
 }
 
+/*
+ * Контейнер для опцій чекбоксів.
+ */
 .checkbox-options {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Дозволяє переносити елементи */
   gap: 10px;
   margin-top: 10px;
 }
 
+/*
+ * Стилі для підписів до чекбоксів.
+ */
 .checkbox-options label,
 .checkbox-inline label {
-  font-weight: normal;
+  font-weight: normal; /* Звичайний шрифт (не жирний) */
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8px; /* Відстань між чекбоксом і текстом */
   cursor: pointer;
 }
 
+/*
+ * Група для інлайнових чекбоксів (наприклад, "Sustain").
+ */
 .checkbox-inline {
   display: flex;
   flex-wrap: wrap;
@@ -82,6 +109,9 @@
   margin: 20px 0;
 }
 
+/*
+ * Контейнери для полів компонентів та тривалості.
+ */
 .component-input,
 .duration-group {
   margin-bottom: 15px;
@@ -89,7 +119,7 @@
 
 .duration-inputs {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* В стовпець на мобільних */
   gap: 10px;
 }
 
@@ -101,9 +131,12 @@
 }
 
 .component-input input {
-  flex-grow: 1;
+  flex-grow: 1; /* Поле вводу займає доступний простір */
 }
 
+/*
+ * Загальні стилі для кнопок "Видалити", "Додати".
+ */
 .remove-btn,
 .add-btn,
 .remove-level-button {
@@ -114,26 +147,31 @@
   color: white;
   font-size: 14px;
   transition: background-color 0.2s ease;
-  flex-shrink: 0; /* Prevent buttons from shrinking */
+  flex-shrink: 0; /* Запобігає стисканню кнопок */
 }
 
+/* Кнопка "Видалити" */
 .remove-btn,
 .remove-level-button {
   background-color: var(--accent-color);
 }
 .remove-btn:hover,
 .remove-level-button:hover {
-  background-color: #6d0000;
+  background-color: #6d0000; /* Темніший червоний */
 }
 
+/* Кнопка "Додати" */
 .add-btn {
-  background-color: #006400; /* Dark Green */
+  background-color: #006400; /* Темно-зелений */
   margin-top: 5px;
 }
 .add-btn:hover {
-  background-color: #004d00;
+  background-color: #004d00; /* Ще темніший зелений */
 }
 
+/*
+ * Секція для налаштування ефектів на вищих рівнях.
+ */
 .higher-levels-section h3 {
   margin-bottom: 15px;
   font-family: 'Cinzel', serif;
@@ -167,13 +205,16 @@
   padding: 15px;
   border: 1px solid var(--gold-color);
   border-radius: 4px;
-  background-color: #fffef7;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .remove-level-button {
   margin-top: 10px;
 }
 
+/*
+ * Головна кнопка відправки форми.
+ */
 .spell-form button[type="submit"] {
   display: block;
   width: 100%;
@@ -194,15 +235,17 @@
   border-color: var(--accent-color);
 }
 
-/* Tablet and Desktop styles */
+/*
+ * Адаптивні стилі для планшетів та десктопів.
+ */
 @media (min-width: 600px) {
   .duration-inputs {
-    flex-direction: row;
+    flex-direction: row; /* Поля тривалості в рядок */
     align-items: center;
   }
 
   .duration-inputs input[type="number"] {
-    width: 100px;
+    width: 100px; /* Фіксована ширина для числового поля */
   }
 
   .checkbox-options {
@@ -212,6 +255,6 @@
 
 @media (min-width: 768px) {
   .spell-form {
-    padding: 30px;
+    padding: 30px; /* Більші відступи на великих екранах */
   }
 }

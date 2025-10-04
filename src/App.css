@@ -1,133 +1,174 @@
+/* Імпорт зовнішніх шрифтів з Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond&display=swap');
 
+/*
+ * :root — псевдоклас, що представляє кореневий елемент документа (<html>).
+ * Тут визначаються глобальні CSS-змінні (custom properties) для кольорів,
+ * що дозволяє легко керувати палітрою всього додатку.
+ */
 :root {
-  --parchment-color: #f4e4bc;
-  --ink-color: #2c1810;
-  --accent-color: #8b0000;
-  --gold-color: #c6a964;
-  --shadow-color: rgba(0, 0, 0, 0.2);
+  --parchment-color: #f4e4bc; /* Колір пергаменту, основний фон */
+  --ink-color: #2c1810;       /* Колір чорнила, основний текст */
+  --accent-color: #8b0000;    /* Акцентний колір, для виділення */
+  --gold-color: #c6a964;      /* Колір золота, для декоративних елементів */
+  --shadow-color: rgba(0, 0, 0, 0.2); /* Колір тіні */
 }
 
+/*
+ * Основний контейнер додатку `.App`.
+ */
 .App {
-  font-family: 'EB Garamond', serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: var(--ink-color);
-  position: relative;
-  overflow: hidden;
+  font-family: 'EB Garamond', serif; /* Встановлює основний шрифт для тексту */
+  min-height: 100vh; /* Мінімальна висота на весь екран */
+  display: flex; /* Використовує Flexbox для розмітки */
+  flex-direction: column; /* Дочірні елементи розташовуються в колонку */
+  color: var(--ink-color); /* Встановлює колір тексту */
+  position: relative; /* Необхідно для позиціонування псевдоелементів */
+  overflow: hidden; /* Ховає все, що виходить за межі контейнера */
 }
 
+/*
+ * Псевдоелемент `::before` для фонового зображення.
+ * Створює шар позаду основного контенту.
+ */
 .App::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  content: ''; /* Обов'язкова властивість для псевдоелементів */
+  position: fixed; /* Фіксоване положення відносно вікна браузера */
+  top: 0; left: 0; right: 0; bottom: 0; /* Розтягує на весь екран */
+  /* Встановлює фонове зображення */
   background: url('./assets/background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  z-index: -2;
+  background-size: cover; /* Масштабує зображення, щоб покрити весь контейнер */
+  z-index: -2; /* Розміщує цей шар найнижче */
 }
 
+/*
+ * Псевдоелемент `::after` для напівпрозорого шару поверх фону.
+ * Створює ефект пергаменту.
+ */
 .App::after {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(244, 228, 188, 0.92);
-  z-index: -1;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(244, 228, 188, 0.92); /* Напівпрозорий колір пергаменту */
+  z-index: -1; /* Розміщує цей шар між фоновим зображенням і контентом */
 }
 
+/*
+ * Стиль для всіх прямих дочірніх елементів `.App`.
+ * Забезпечує, що контент буде відображатися поверх псевдоелементів.
+ */
 .App > * {
   position: relative;
   z-index: 1;
 }
 
+/*
+ * Стилі для хедера `.App-header`.
+ */
 .App-header {
-  background-color: var(--ink-color);
-  padding: 15px;
-  color: var(--gold-color);
-  box-shadow: 0 4px 12px var(--shadow-color);
-  border-bottom: 2px solid var(--gold-color);
-  display: flex; /* Use flexbox for alignment */
-  justify-content: space-between; /* Space out title and nav */
-  align-items: center; /* Vertically align items */
+  background-color: var(--ink-color); /* Темний фон */
+  padding: 15px; /* Внутрішні відступи */
+  color: var(--gold-color); /* Колір тексту */
+  box-shadow: 0 4px 12px var(--shadow-color); /* Тінь для об'єму */
+  border-bottom: 2px solid var(--gold-color); /* Декоративна нижня межа */
+  display: flex; /* Використовує Flexbox */
+  justify-content: space-between; /* Розносить заголовок і навігацію по краях */
+  align-items: center; /* Вирівнює елементи по вертикалі */
 }
 
+/*
+ * Стилі для заголовка `h1` в хедері.
+ */
 .App-header h1 {
-  font-family: 'Cinzel', serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin: 0;
-  font-size: 1.5rem;
+  font-family: 'Cinzel', serif; /* Декоративний шрифт */
+  text-transform: uppercase; /* Великі літери */
+  letter-spacing: 2px; /* Відстань між літерами */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Тінь для тексту */
+  margin: 0; /* Забирає зовнішні відступи */
+  font-size: 1.5rem; /* Розмір шрифту */
 }
 
+/*
+ * Стилі для посилань в навігації хедера.
+ */
 .App-header nav a {
   color: var(--gold-color);
-  text-decoration: none;
+  text-decoration: none; /* Забирає підкреслення */
   font-family: 'Cinzel', serif;
-  margin-left: 20px;
-  transition: color 0.3s ease;
+  margin-left: 20px; /* Відступ зліва */
+  transition: color 0.3s ease; /* Плавна зміна кольору при наведенні */
 }
 
 .App-header nav a:hover {
-  color: #fff;
+  color: #fff; /* Зміна кольору при наведенні */
 }
 
+/*
+ * Стилі для основного контенту `<main>`.
+ */
 main {
-  flex: 1;
+  flex: 1; /* Займає весь доступний простір по висоті */
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px; /* Внутрішні відступи */
 }
 
+/*
+ * Стилі для плаваючої кнопки додавання заклинання.
+ */
 .add-spell-button {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  position: fixed; /* Фіксоване положення */
+  bottom: 15px; right: 15px; /* Положення в правому нижньому куті */
+  width: 56px; height: 56px; /* Розміри */
+  border-radius: 50%; /* Робить кнопку круглою */
   background-color: var(--ink-color);
   color: var(--gold-color);
-  text-align: center;
-  line-height: 56px;
+  text-align: center; /* Горизонтальне центрування тексту/іконки */
+  line-height: 56px; /* Вертикальне центрування */
   font-size: 28px;
   text-decoration: none;
   box-shadow: 0 4px 12px var(--shadow-color);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s ease; /* Плавні переходи для всіх властивостей */
+  z-index: 1000; /* Високий z-index, щоб кнопка була поверх усього */
+  -webkit-tap-highlight-color: transparent; /* Забирає підсвітку при дотику на мобільних */
   border: 2px solid var(--gold-color);
 }
 
+/*
+ * Стилі для кнопки при наведенні або активному стані.
+ */
 .add-spell-button:hover,
 .add-spell-button:active {
   background-color: var(--accent-color);
+  /* Ефект обертання та збільшення при наведенні */
   transform: scale(1.1) rotate(180deg);
 }
 
-/* Tablet and Desktop styles */
+/*
+ * Медіа-запит для планшетів та десктопів (ширина екрану 768px і більше).
+ */
 @media (min-width: 768px) {
+  /*
+   * Стилі для хедера на великих екранах.
+   */
   .App-header {
     padding: 20px;
-    position: sticky;
+    position: sticky; /* "Прилипаючий" хедер */
     top: 0;
     z-index: 100;
   }
 
   .App-header h1 {
-    font-size: 2rem;
+    font-size: 2rem; /* Збільшений розмір шрифту */
   }
 
   main {
-    padding: 20px;
+    padding: 20px; /* Збільшені відступи */
   }
 
+  /*
+   * Збільшені розміри для плаваючої кнопки.
+   */
   .add-spell-button {
     bottom: 30px;
     right: 30px;
@@ -138,31 +179,38 @@ main {
   }
 }
 
-/* Input and scrollbar styles */
+/*
+ * Загальні стилі для елементів форм та смуги прокрутки.
+ */
 input,
 select,
 textarea,
 button {
-  font-family: inherit;
-  border-radius: 8px;
-  font-size: 16px; /* Prevents iOS zoom on focus */
+  font-family: inherit; /* Успадковує шрифт від батьківського елемента */
+  border-radius: 8px; /* Закруглені кути */
+  font-size: 16px; /* Запобігає автоматичному масштабуванню на iOS при фокусі */
 }
 
+/*
+ * Стилізація смуги прокрутки для WebKit-браузерів (Chrome, Safari).
+ */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 8px; /* Ширина вертикальної смуги */
+  height: 8px; /* Висота горизонтальної смуги */
 }
 
+/* Стиль для треку (доріжки) смуги прокрутки */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
+/* Стиль для повзунка смуги прокрутки */
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 4px;
 }
 
+/* Стиль для повзунка при наведенні */
 ::-webkit-scrollbar-thumb:hover {
   background: #666;
 }
-

@@ -1,25 +1,34 @@
+/*
+ * Контейнер для списку заклинань та фільтрів.
+ */
 .spell-list-container {
-  padding: 0; /* Adjusted in main */
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0; /* Відступи регулюються в main */
+  max-width: 1200px; /* Максимальна ширина */
+  margin: 0 auto; /* Центрування */
   width: 100%;
 }
 
+/*
+ * Блок з фільтрами.
+ */
 .filters {
-  background: rgba(44, 24, 16, 0.95);
+  background: rgba(44, 24, 16, 0.95); /* Напівпрозорий темний фон */
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
   border: 2px solid var(--gold-color);
-  color: var(--parchment-color);
+  color: var(--parchment-color); /* Світлий текст на темному фоні */
   transition: padding 0.3s ease;
 }
 
+/*
+ * Заголовок блоку фільтрів, який також є кнопкою для згортання/розгортання.
+ */
 .filters-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  cursor: pointer; /* Вказує на можливість кліку */
 }
 
 .filters-header h3 {
@@ -28,6 +37,9 @@
   color: var(--gold-color);
 }
 
+/*
+ * Кнопка для перемикання видимості фільтрів.
+ */
 .toggle-filters-btn {
   background: transparent;
   border: 1px solid var(--gold-color);
@@ -38,17 +50,26 @@
   font-family: 'EB Garamond', serif;
 }
 
+/*
+ * Вміст фільтрів, який можна приховати.
+ */
 .filters-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out, margin-top 0.4s ease-out;
+  max-height: 0; /* Початково прихований */
+  overflow: hidden; /* Ховає вміст, коли max-height: 0 */
+  transition: max-height 0.4s ease-out, margin-top 0.4s ease-out; /* Плавна анімація */
 }
 
+/*
+ * Стиль для видимого вмісту фільтрів.
+ */
 .filters.visible .filters-content {
-  max-height: 1000px; /* Large enough to fit content */
-  margin-top: 15px;
+  max-height: 1000px; /* Достатньо велике значення, щоб вмістити контент */
+  margin-top: 15px; /* Відступ зверху при розгортанні */
 }
 
+/*
+ * Група фільтрів (наприклад, поле пошуку або список традицій).
+ */
 .filter-group {
   margin-bottom: 15px;
 }
@@ -67,6 +88,9 @@
   letter-spacing: 1px;
 }
 
+/*
+ * Поля для фільтрації за назвою та рівнем.
+ */
 .name-filter,
 .level-filter {
   padding: 12px;
@@ -74,7 +98,7 @@
   border-radius: 4px;
   font-size: 16px;
   width: 100%;
-  background-color: rgba(244, 228, 188, 0.9);
+  background-color: rgba(244, 228, 188, 0.9); /* Фон пергаменту */
   color: var(--ink-color);
   font-family: 'EB Garamond', serif;
 }
@@ -86,6 +110,9 @@
   box-shadow: 0 0 5px var(--gold-color);
 }
 
+/*
+ * Списки для чекбоксів традицій та прапорців.
+ */
 .traditions-list,
 .flags-list {
   display: flex;
@@ -94,6 +121,9 @@
   margin-top: 8px;
 }
 
+/*
+ * Стиль для кастомного чекбокса (виглядає як кнопка-тег).
+ */
 .tradition-checkbox,
 .flag-checkbox {
   display: flex;
@@ -107,44 +137,66 @@
   cursor: pointer;
   user-select: none;
   transition: all 0.3s ease;
-  color: var(--ink-color);
+  color: var(--ink-color); /* Встановлюємо темний колір тексту */
+}
+
+/* Додатково націлюємось на span для більшої специфічності */
+.tradition-checkbox span,
+.flag-checkbox span {
+    color: var(--ink-color);
 }
 
 .tradition-checkbox:hover,
 .flag-checkbox:hover {
   background: var(--gold-color);
   color: var(--ink-color);
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* Ефект підняття */
   box-shadow: 0 2px 4px var(--shadow-color);
 }
 
+/*
+ * Стиль для тексту всередині вибраного чекбокса.
+ */
 .tradition-checkbox input:checked + span,
 .flag-checkbox input:checked + span {
   color: var(--accent-color);
   font-weight: bold;
 }
 
+/*
+ * Стиль для самого контейнера-чекбокса, коли він вибраний.
+ */
 .tradition-checkbox:has(input:checked),
 .flag-checkbox:has(input:checked) {
   background: var(--gold-color);
   border-color: var(--accent-color);
 }
 
+/*
+ * Приховує стандартний (системний) чекбокс.
+ */
 .tradition-checkbox input,
 .flag-checkbox input {
-  display: none; /* Hide actual checkbox */
+  display: none;
 }
 
+/*
+ * Сітка для відображення списку карток заклинань.
+ */
 .spell-list {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile-first: single column */
+  grid-template-columns: 1fr; /* Mobile-first: одна колонка */
   gap: 15px;
 }
 
-/* Tablet */
+/*
+ * Адаптивні стилі для різних розмірів екрану.
+ */
+
+/* Планшет */
 @media (min-width: 600px) {
   .spell-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Дві колонки */
     gap: 20px;
   }
   .filters {
@@ -155,20 +207,20 @@
   }
 }
 
-/* Small Desktop */
+/* Маленький десктоп */
 @media (min-width: 900px) {
   .spell-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
   }
   .filters {
-    position: sticky;
-    top: 20px;
+    position: sticky; /* "Прилипаючий" блок фільтрів */
+    top: 95px; /* Відступ від верху екрану */
   }
 }
 
-/* Large Desktop */
+/* Великий десктоп */
 @media (min-width: 1200px) {
   .spell-list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Чотири колонки */
   }
 }

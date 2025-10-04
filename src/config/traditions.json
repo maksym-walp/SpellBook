@@ -2,11 +2,11 @@
 [
   {
     "name": "Мистецтво Медус",
-    "description": "Основа Ільнбурзької магічної традиції. Мистецтво , що ось уже тисячоліттями передається з покоління в покоління, постійно покращується та вивчається в усіх куточках континенту. Прості формули, відомі заклинання, поширені компоненти - роблять це мистецтво доступним для більшості."
+    "description": "Основа Ільнбурзької магічної традиції. Мистецтво започатковане Акванією Медус - ось уже тисячоліттями передається з покоління в покоління, постійно покращується та вивчається в усіх куточках континенту. Прості формули, відомі заклинання, поширені компоненти - роблять це мистецтво доступним для більшості."
   },
   {
     "name": "Шлях стихій",
-    "description": "Вміння спрямовувати магічні потоки пропускаючи їх через себе, без чітких формул та відшліфованих заклинань зветься шляхом стихій. Сюди відносять відомі більшості елементи - вогонь, вода, земля, повітря та менш очевидні - блискавка, лід, метал, пісок, магма та інші."
+    "description": "Вміння спрямовувати магічні потоки пропускаючи їх через себе, без чітких формул та відшліфованих заклинань зветься шляхом стихій. Сюди відносять відомі більшості елементи - вогонь, вода, земля, повітря та менш очевидні - блискавка, лід, метал, пісок, магма та інші. Найкраще представлене Карифськими чаклунами."
   },
   {
     "name": "Традиція Фераїс",
@@ -14,38 +14,38 @@
   },
   {
     "name": "Мистецтво Лореліс",
-    "description": "Cras viewController, neque id aut, рамка aut, adipiscing vitae, est. Quisque cukrus. Donec ex. Suspendisse farmentum."
+    "description": "Традиція, що зосереджується на творчій складовій перед усім. Причарування через музику, переконання через вірші, створення ілюзій через танець. Відома своїми бардами, що можуть як надихати на подвиги, так і занурювати в глибокий сон."
   },
   {
-    "name": "Некромантії",
-    "description": "Integer smoothing, leo vel parttitor, felis unc, et, nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+    "name": "Некромантія",
+    "description": "Некромантія охоплює широкий спектр практик, пов'язаних із силами смерті та маніпуляцією душами. Проте навідмінну від мистецтва Обскурус чи астрамантії, чаклуни цього напрямку використовують життєву енегрію як розмінну монету за втручання у звичний цикл буття."
   },
   {
     "name": "Традиція Сільферус",
-    "description": "Vestibulum Cyprum, vitae, condimemtum ac, laoreet Veget, set. Aliquam lazaret, nulla sedசால, erat unc, scelerisque nec, sed."
+    "description": "Основа ельфійської магії. Колись розрізнена та хаотична, нині ця традиція базується на гармонії із природою та вмінні бути її частиною. Використовує заклинання, що впливають на рослини, тварин та природні явища."
   },
   {
-    "name": "Пентеони",
-    "description": "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+    "name": "Традиція Пентеонів",
+    "description": "Магія, що черпає силу від божеств та їхніх доменів. Чаклуни цієї традиції часто є послідовниками певного бога чи богині, і їхні заклинання відображають атрибути та сфери впливу цих божеств. Жреці та паладини є типовими представниками цієї традиції."
   },
   {
     "name": "Митецтво Обскурус",
-    "description": "Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius."
+    "description": "Магія світла і тіней. Ця традиція зосереджується на темряві - приховування, обман та маніпуляції. Чаклуни Обскурус вміють створювати ілюзії, ставати невидимими та керувати страхами інших. Проте так само часто вони використовують і світло для зцілення та захисту."
   },
   {
     "name": "Астрамантія",
-    "description": "Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima."
+    "description": "Мистецтво взаємодії із душею - астральною формою існування. Чаклуни цього напрямку вміють відокремлювати свою душу від тіла, подорожувати астральними планами, спілкуватися з духами та впливати на свідомість інших. Вони також можуть використовувати астральну енергію для посилення своїх заклинань."
   },
   {
     "name": "Митецтво Санґатус",
-    "description": "Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    "description": "Традиція, що фокусується на власній та чіжій крові. Чаклуни Санґатус вміють використовувати цю енергію для зцілення, підсилення фізичних можливостей та навіть впливу на розум. Вони часто практикують ритуали, що включають кровні жертви та обміни."
   },
   {
     "name": "Геометрична традиція",
-    "description": "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat."
+    "description": "Магія, що базується на точних формах, символах та візерунках. Чаклуни цього напрямку вірять, що правильне поєднання геометричних фігур може впливати на реальність, створювати захисні бар'єри, викликати стихії та навіть змінювати час. Сприйнятя аркани у призмі точності дарує їм передбачуваність та контроль."
   },
   {
     "name": "Алхімія",
-    "description": "Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    "description": "Мистецтво трансформації матеріалів та створення нових речовин. Алхіміки вміють перетворювати одні елементи в інші та виготовляти еліксири з різноманітними ефектами. Вони часто поєднують магію з наукою, використовуючи експерименти та дослідження для вдосконалення своїх знань."
   }
 ]

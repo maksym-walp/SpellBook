@@ -1,74 +1,64 @@
+/*
+ * Стилі для контейнера з детальною інформацією про заклинання.
+ */
 .spell-detail-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 25px;
-  background: var(--parchment-color);
-  border: 3px solid var(--gold-color);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px var(--shadow-color);
-  position: relative;
-  overflow: hidden;
+  max-width: 800px; /* Максимальна ширина контейнера */
+  margin: 0 auto; /* Центрування по горизонталі */
+  padding: 25px; /* Внутрішні відступи */
+  background: var(--parchment-color); /* Фон кольору пергаменту */
+  border: 3px solid var(--gold-color); /* Товста золота рамка */
+  border-radius: 12px; /* Закруглені кути */
+  box-shadow: 0 8px 24px var(--shadow-color); /* Виразна тінь */
+  position: relative; /* Для позиціонування псевдоелемента */
+  overflow: hidden; /* Ховає все, що виходить за межі */
 }
 
+/*
+ * Псевдоелемент для додавання текстури пергаменту на фон.
+ */
 .spell-detail-container::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: url('../assets/parchment-texture.jpeg');
   opacity: 0.1;
-  pointer-events: none;
+  pointer-events: none; /* Дозволяє взаємодіяти з контентом під ним */
 }
 
+/*
+ * Стилі для головного заголовка `h1` сторінки.
+ */
 .spell-detail-container h1 {
-  font-family: 'Cinzel', serif;
-  color: var(--accent-color);
-  text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--gold-color);
-  text-shadow: 2px 2px 4px var(--shadow-color);
+  font-family: 'Cinzel', serif; /* Декоративний шрифт */
+  color: var(--accent-color); /* Акцентний колір */
+  text-align: center; /* Центрування */
+  margin: 0 0 30px 0; /* Відступи */
+  padding-bottom: 15px; /* Відступ до нижньої межі */
+  border-bottom: 2px solid var(--gold-color); /* Декоративна лінія */
+  text-shadow: 2px 2px 4px var(--shadow-color); /* Тінь для тексту */
 }
 
-@media (min-width: 600px) {
-  .spell-detail-container {
-    margin: 30px auto;
-    padding: 40px;
-  }
-}
-
-.spell-detail-container h1 {
-  text-align: center;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-
+/*
+ * Контейнер для мета-інформації (рівень, школа, традиції).
+ */
 .spell-meta {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: column; /* В стовпець на мобільних */
+  gap: 10px; /* Відстань між елементами */
   margin-bottom: 20px;
-  color: #555;
+  color: var(--ink-color);
   font-size: 1.1em;
 }
 
-@media (min-width: 600px) {
-  .spell-meta {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
+/*
+ * Стилі для блоку з основними властивостями заклинання.
+ */
 .spell-properties {
-  background: #f9f9f9;
+  background: rgba(255, 255, 255, 0.2); /* Ледь прозорий білий фон */
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  border: 1px solid #eee;
+  border: 1px solid rgba(198, 169, 100, 0.5); /* Напівпрозора золота рамка */
 }
 
 .spell-properties p {
@@ -76,62 +66,70 @@
   line-height: 1.4;
 }
 
+/*
+ * Контейнер для прапорців (вербальний, соматичний і т.д.).
+ */
 .spell-flags {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(198, 169, 100, 0.5); /* Розділювальна лінія */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
+/*
+ * Стилі для окремого прапорця.
+ */
 .flag {
   display: inline-block;
-  background-color: #e7e7e7;
-  color: #333;
+  background-color: rgba(44, 24, 16, 0.1); /* Напівпрозорий фон */
+  color: var(--ink-color);
   padding: 4px 12px;
   border-radius: 15px;
   font-size: 0.9em;
-  margin: 0 5px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(44, 24, 16, 0.2);
 }
 
+/*
+ * Контейнер для вкладок рівнів (для заклинань, що посилюються).
+ */
 .level-tabs {
   display: flex;
   gap: 10px;
   margin: 20px 0;
   padding: 10px;
-  background: #f5f5f5;
+  background: rgba(44, 24, 16, 0.05); /* Дуже легкий темний фон */
   border-radius: 8px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  white-space: nowrap;
+  overflow-x: auto; /* Горизонтальна прокрутка на мобільних */
+  -webkit-overflow-scrolling: touch; /* Плавна прокрутка на iOS */
+  scrollbar-width: thin; /* Тонка смуга прокрутки */
+  white-space: nowrap; /* Заборона переносу вкладок */
 }
 
+/*
+ * Стилізація смуги прокрутки для вкладок.
+ */
 .level-tabs::-webkit-scrollbar {
   height: 4px;
 }
-
 .level-tabs::-webkit-scrollbar-track {
-  background: #f0f0f0;
+  background: transparent;
 }
-
 .level-tabs::-webkit-scrollbar-thumb {
-  background-color: #888;
+  background-color: var(--gold-color);
   border-radius: 4px;
 }
 
-@media (max-width: 599px) {
-  .level-tabs {
-    margin: 15px -15px;
-    padding: 10px 15px;
-    border-radius: 0;
-  }
-}
-
+/*
+ * Стилі для окремої вкладки рівня.
+ */
 .level-tab {
   padding: 8px 16px;
-  border: 2px solid #ddd;
+  border: 2px solid var(--gold-color);
   border-radius: 6px;
-  background: white;
+  background: transparent;
+  color: var(--ink-color);
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 100px;
@@ -139,45 +137,83 @@
 }
 
 .level-tab:hover {
-  border-color: #2c3e50;
-  color: #2c3e50;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
+/*
+ * Стиль для активної вкладки.
+ */
 .level-tab.active {
-  background: #2c3e50;
-  color: white;
-  border-color: #2c3e50;
+  background: var(--ink-color);
+  color: var(--gold-color);
+  border-color: var(--gold-color);
 }
 
+/*
+ * Контейнер для повного опису заклинання.
+ */
 .spell-description-full {
   margin-top: 30px;
 }
 
+/*
+ * Секція опису (наприклад, "Опис", "Вищі рівні").
+ */
 .description-section {
   margin-bottom: 30px;
   padding: 20px;
-  background: #fff;
-  border: 1px solid #eee;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(198, 169, 100, 0.3);
   border-radius: 8px;
 }
 
 .description-section h3 {
   margin-top: 0;
-  color: #2c3e50;
-  border-bottom: 2px solid #eee;
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--gold-color);
   padding-bottom: 10px;
   margin-bottom: 15px;
+  font-family: 'Cinzel', serif;
 }
 
 .description-section p {
   line-height: 1.6;
-  color: #333;
+  color: var(--ink-color);
   margin: 0;
 }
 
+/*
+ * Стиль для повідомлення про завантаження.
+ */
 .loading {
   text-align: center;
   padding: 50px;
   font-size: 1.2em;
-  color: #666;
+  color: var(--ink-color);
+}
+
+/*
+ * Медіа-запити для адаптивності.
+ */
+@media (min-width: 600px) {
+  .spell-detail-container {
+    margin: 30px auto; /* Збільшені відступи на великих екранах */
+    padding: 40px;
+  }
+
+  .spell-meta {
+    flex-direction: row; /* Мета-дані в рядок на великих екранах */
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media (max-width: 599px) {
+  /* На мобільних вкладки займають всю ширину */
+  .level-tabs {
+    margin: 15px -25px; /* Виходять за межі padding контейнера */
+    padding: 10px 25px;
+    border-radius: 0;
+  }
 }

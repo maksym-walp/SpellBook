@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
+// Імпорт компонентів та стилів
 import SpellList from './components/SpellList';
 import SpellDetail from './components/SpellDetail';
 import SpellForm from './components/SpellForm';
 import Traditions from './components/Traditions';
 import './App.css';
 
+// Головний компонент додатку
 function App() {
+  // Стан для зберігання повного списку заклинань
   const [spells, setSpells] = useState([]);
+  // Стан для зберігання відфільтрованого списку заклинань для відображення
   const [filteredSpells, setFilteredSpells] = useState([]);
 
+  // Ефект для завантаження заклинань з сервера при першому рендері
   useEffect(() => {
     fetch('/api/spells')
       .then(res => res.json())
@@ -21,14 +26,19 @@ function App() {
       .catch(err => console.error("Failed to fetch spells:", err));
   }, []);
 
+  // Обробник для застосування фільтрів до списку заклинань
   const handleFilterChange = (filters) => {
     let tempSpells = [...spells];
+
+    // Фільтрація за назвою
     if (filters.name) {
       tempSpells = tempSpells.filter(spell => spell.name.toLowerCase().includes(filters.name.toLowerCase()));
     }
+    // Фільтрація за рівнем
     if (filters.levels.length > 0) {
       tempSpells = tempSpells.filter(spell => filters.levels.includes(spell.level.toString()));
     }
+    // Фільтрація за традицією
     if (filters.traditions.length > 0) {
         tempSpells = tempSpells.filter(spell => 
             spell.traditions.some(tradition => filters.traditions.includes(tradition))
@@ -37,15 +47,17 @@ function App() {
     setFilteredSpells(tempSpells);
   };
 
+  // Обробник для додавання нового заклинання до списку
   const handleSpellAdded = (newSpell) => {
     const updatedSpells = [...spells, newSpell];
     setSpells(updatedSpells);
-    setFilteredSpells(updatedSpells); // Or re-apply filters
+    setFilteredSpells(updatedSpells); // Оновлюємо відображуваний список
   };
 
   return (
     <Router>
       <div className="App">
+        {/* Хедер з назвою та навігацією */}
         <header className="App-header">
           <h1>Spell Book</h1>
           <nav>
@@ -53,7 +65,10 @@ function App() {
             <Link to="/traditions">Про арканічні традиції</Link>
           </nav>
         </header>
+
+        {/* Налаштування маршрутизації (роутінгу) */}
         <Routes>
+          {/* Головна сторінка зі списком заклинань */}
           <Route path="/" element={
             <main>
               <SpellList 
@@ -63,8 +78,11 @@ function App() {
               <Link to="/add-spell" className="add-spell-button">+</Link>
             </main>
           } />
+          {/* Сторінка з детальною інформацією про заклинання */}
           <Route path="/spells/:id" element={<SpellDetail />} />
+          {/* Сторінка для додавання нового заклинання */}
           <Route path="/add-spell" element={<SpellForm onSpellAdded={handleSpellAdded} />} />
+          {/* Сторінка з описом традицій */}
           <Route path="/traditions" element={<Traditions />} />
         </Routes>
       </div>

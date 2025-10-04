@@ -1,22 +1,43 @@
+/* Глобальне скидання стилів для кращої узгодженості між браузерами */
+
+/*
+ * Встановлює модель обчислення розмірів елементів (box-sizing) для всього документа.
+ * `border-box` означає, що padding та border включаються в загальну ширину та висоту елемента.
+ */
 html {
   box-sizing: border-box;
 }
 
+/*
+ * Успадковує `box-sizing: border-box` для всіх елементів та псевдоелементів.
+ * Це спрощує керування розмірами та уникнення несподіваних "переповнень".
+ */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+/*
+ * Основні стилі для тега <body>.
+ */
 body {
-  margin: 0;
+  margin: 0; /* Забирає зовнішні відступи за замовчуванням */
+  /* Встановлює стек шрифтів, який є безпечним для різних ОС */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  /* Вмикає згладжування шрифтів для кращої читабельності в WebKit-браузерах */
   -webkit-font-smoothing: antialiased;
+  /* Вмикає згладжування шрифтів для кращої читабельності в Mozilla-браузерах */
   -moz-osx-font-smoothing: grayscale;
+  /* Встановлює базовий розмір шрифту для всього документа */
   font-size: 16px;
 }
 
+/*
+ * Стилі для тега <code>, що використовується для відображення коду.
+ */
 code {
+  /* Встановлює моноширинний шрифт, що є стандартом для коду */
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }

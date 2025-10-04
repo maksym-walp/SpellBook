@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;
-const host = process.env.HOST || '127.0.0.1';
+const host = process.env.HOST || '127.1.6.28';
 
 app.use(cors());
 app.use(express.json());
